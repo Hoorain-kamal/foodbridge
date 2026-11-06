@@ -22,7 +22,7 @@ export function MatchDemo() {
   const done = step === 3;
 
   return (
-    <section className="px-5 py-24 md:px-8" aria-labelledby="demo-h">
+    <section className="px-5 py-16 md:px-8 md:py-24" aria-labelledby="demo-h">
       <div className="mx-auto max-w-6xl">
         <div className="reveal text-center">
           <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
@@ -31,12 +31,12 @@ export function MatchDemo() {
           <h2 id="demo-h" className="mx-auto mt-5 max-w-2xl text-4xl md:text-6xl">See how FoodBridge connects food.</h2>
         </div>
 
-        <div className="reveal mt-14 grid items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
-          <div className="rounded-3xl bg-card p-7 shadow-soft">
+        <div className="reveal mt-10 md:mt-14 grid items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
+          <div className="rounded-3xl bg-card p-6 sm:p-7 shadow-soft">
             <div className="flex items-center gap-3">
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary"><Store className="h-6 w-6" /></span>
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">Donor</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">Sample donor</p>
                 <p className="font-serif text-xl">Green Leaf Restaurant</p>
               </div>
             </div>
@@ -71,11 +71,11 @@ export function MatchDemo() {
             </p>
           </div>
 
-          <div className={`rounded-3xl p-7 shadow-soft transition-all duration-700 ${done ? "bg-primary text-primary-foreground" : "bg-card"}`}>
+          <div className={`rounded-3xl p-6 sm:p-7 shadow-soft transition-all duration-700 ${done ? "bg-primary text-primary-foreground" : "bg-card"}`}>
             <div className="flex items-center gap-3">
               <span className={`grid h-12 w-12 place-items-center rounded-2xl ${done ? "bg-fresh" : "bg-secondary"}`}><HeartHandshake className="h-6 w-6" /></span>
               <div>
-                <p className="text-xs uppercase tracking-widest opacity-70">Recipient</p>
+                <p className="text-xs uppercase tracking-widest opacity-70">Sample recipient</p>
                 <p className="font-serif text-xl">{done ? "Community Care Kitchen" : "Searching…"}</p>
               </div>
             </div>
@@ -95,11 +95,11 @@ export function MatchDemo() {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-3">
-          <button onClick={run} disabled={running} className="btn-base btn-accent">
+          <button onClick={run} disabled={running} className="btn-base btn-accent w-full sm:w-auto">
             {done ? <RotateCcw className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
             {done ? "Run it again" : running ? "Matching…" : "Simulate a Food Match"}
           </button>
-          <p className="text-xs text-muted-foreground">This is a simulation. No real donation or delivery takes place.</p>
+          <p className="text-center text-xs text-muted-foreground">Simulation using sample data. No real donation or delivery takes place.</p>
         </div>
       </div>
     </section>

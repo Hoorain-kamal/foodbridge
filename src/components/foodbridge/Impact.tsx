@@ -21,7 +21,7 @@ function Metric({ m, start, i }: { m: (typeof METRICS)[number]; start: boolean; 
         {v.toLocaleString("en-IN")}
         <span className="text-accent">{m.suffix}</span>
       </p>
-      <p className="mt-2 text-sm opacity-75">{m.label}</p>
+      <p className="mt-2 text-sm opacity-75">{m.label} <span className="opacity-70">(illustrative)</span></p>
     </div>
   );
 }
@@ -33,11 +33,11 @@ export function Impact() {
       <div className="mx-auto max-w-7xl">
         <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <h2 className="max-w-xl text-4xl md:text-6xl">Every rescued meal tells a story.</h2>
-          <p className="rounded-full border border-primary-foreground/25 px-4 py-2 text-xs font-semibold">
-            Illustrative impact metrics for demonstration.
+          <p className="w-fit rounded-full border border-primary-foreground/25 px-4 py-2 text-xs font-semibold">
+            Illustrative sample metrics, not real data
           </p>
         </div>
-        <div ref={ref} className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={ref} className="mt-10 md:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {METRICS.map((m, i) => <Metric key={m.label} m={m} start={inView} i={i} />)}
         </div>
 

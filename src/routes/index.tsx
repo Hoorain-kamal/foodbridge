@@ -90,7 +90,7 @@ function Hero() {
 
 function Problem() {
   return (
-    <section id="mission" className="bg-secondary px-5 py-24 md:px-8">
+    <section id="mission" className="bg-secondary px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="reveal grid gap-6 md:grid-cols-2 md:items-end">
           <div>
@@ -101,7 +101,7 @@ function Problem() {
             Restaurants, shops and events often end the day with food that is still fresh and safe. Without an easy way to share it, much of it is thrown out, while just a few streets away, families and shelters struggle to put a meal on the table.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-2">
           {[
             { img: wasted, tag: "Food wasted", alt: "Bags of bread and fresh produce discarded in a waste bin", text: "Edible surplus ends up in bins and landfills." },
             { img: needed, tag: "Food needed", alt: "Volunteers serving warm meals to families at a community kitchen", text: "Community kitchens work every day to feed more people." },
@@ -130,7 +130,7 @@ function Solution() {
     { icon: Truck, title: "Deliver With Care", text: "Coordinate timely pickups and deliveries to reduce food waste." },
   ];
   return (
-    <section className="px-5 py-24 md:px-8">
+    <section className="px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="reveal max-w-2xl">
           <Eyebrow>Our solution</Eyebrow>
@@ -139,7 +139,7 @@ function Solution() {
             FoodBridge creates a simple connection between people who have extra food and organizations that can distribute it safely to those who need it.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-3">
           {items.map((it, i) => (
             <article key={it.title} className="reveal group rounded-3xl bg-card p-8 shadow-soft transition duration-500 hover:-translate-y-2 hover:shadow-lift" style={{ transitionDelay: `${i * 100}ms` }}>
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-secondary text-primary transition group-hover:bg-fresh group-hover:text-fresh-foreground">
@@ -162,7 +162,7 @@ function HowItWorks() {
     { n: "03", icon: PackageCheck, title: "Deliver & Make an Impact", text: "Coordinate pickup and confirm the donation, helping good food reach people instead of landfills." },
   ];
   return (
-    <section id="how" className="bg-secondary px-5 py-24 md:px-8">
+    <section id="how" className="bg-secondary px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="reveal text-center">
           <Eyebrow>How it works</Eyebrow>
@@ -195,23 +195,23 @@ function Stories() {
     { who: "Anand, community member", role: "Meal recipient", quote: "After losing work, a warm, healthy meal felt like someone saying, you matter. It gave me the strength to keep going while I got back on my feet." },
   ];
   return (
-    <section id="stories" className="px-5 py-24 md:px-8">
+    <section id="stories" className="px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Eyebrow>Community stories</Eyebrow>
             <h2 className="mt-4 max-w-2xl text-4xl md:text-6xl">Small acts. Extraordinary impact.</h2>
           </div>
-          <p className="text-sm text-muted-foreground">Illustrative stories, not real testimonials.</p>
+          <p className="w-fit rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent">Illustrative stories · not real testimonials</p>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-3">
           {stories.map((s, i) => (
             <figure key={s.who} className={`reveal flex flex-col rounded-3xl p-8 shadow-soft transition duration-500 hover:-translate-y-2 ${i === 1 ? "bg-primary text-primary-foreground md:-translate-y-6 md:hover:-translate-y-8" : "bg-card"}`} style={{ transitionDelay: `${i * 120}ms` }}>
               <Quote className={`h-8 w-8 ${i === 1 ? "text-fresh" : "text-accent"}`} />
               <blockquote className="mt-6 flex-1 font-serif text-xl leading-relaxed">{s.quote}</blockquote>
               <figcaption className="mt-8 border-t border-current/15 pt-5">
                 <p className="font-semibold">{s.who}</p>
-                <p className="text-sm opacity-70">{s.role}</p>
+                <p className="text-sm opacity-70">{s.role} · Illustrative</p>
               </figcaption>
             </figure>
           ))}
@@ -224,8 +224,8 @@ function Stories() {
 function FinalCta() {
   const action = useAction();
   return (
-    <section className="px-5 pb-24 md:px-8">
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-primary px-6 py-20 text-center text-primary-foreground md:px-16 md:py-28">
+    <section className="px-5 pb-16 md:px-8 md:pb-24">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-primary px-6 py-14 text-center text-primary-foreground sm:py-20 md:px-16 md:py-28">
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-fresh/30 blur-3xl" aria-hidden />
         <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/25 blur-3xl" aria-hidden />
         <div className="relative">
