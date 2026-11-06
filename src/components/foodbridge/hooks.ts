@@ -8,7 +8,7 @@ export function useInView<T extends Element>(threshold = 0.2) {
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) {
+        if (e?.isIntersecting) {
           setInView(true);
           io.disconnect();
         }
@@ -45,7 +45,7 @@ export function useRevealAll() {
     const io = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
-          if (e.isIntersecting) {
+          if (e?.isIntersecting) {
             e.target.classList.add("is-visible");
             io.unobserve(e.target);
           }
