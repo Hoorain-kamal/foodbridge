@@ -137,3 +137,17 @@ h1, h2, h3, .font-serif { font-family: var(--font-serif); letter-spacing: -0.02e
   .reveal { opacity: 1; transform: none; transition: none; }
   .float-slow, .travel-dot { animation: none; }
 }
+
+@utility btn-base {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border-radius: 9999px; padding: 0.85rem 1.5rem; font-weight: 600; font-size: 0.95rem;
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, color .25s ease;
+  &:hover { transform: translateY(-2px); }
+  &:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+  &:disabled { opacity: .6; transform: none; cursor: not-allowed; }
+}
+@utility btn-primary { background: var(--primary); color: var(--primary-foreground); &:hover { box-shadow: var(--shadow-lift); } }
+@utility btn-accent { background: var(--accent); color: var(--accent-foreground); &:hover { box-shadow: 0 18px 40px -18px var(--accent); } }
+@utility btn-outline { border: 1.5px solid var(--primary); color: var(--primary); &:hover { background: var(--primary); color: var(--primary-foreground); } }
+@utility btn-light { background: var(--background); color: var(--primary); }
+@utility btn-outline-light { border: 1.5px solid color-mix(in oklab, var(--primary-foreground) 50%, transparent); color: var(--primary-foreground); &:hover { background: var(--primary-foreground); color: var(--primary); } }
