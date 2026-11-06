@@ -99,7 +99,7 @@ export function Footer() {
         </div>
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-3 text-sm font-medium">
-            {[NAV[0], NAV[1], NAV[2]].map((n) => (
+            {NAV.slice(0, 3).map((n) => (
               <li key={n.href}><a href={n.href} className="hover:text-fresh">{n.label}</a></li>
             ))}
             <li><a href="mailto:hello@foodbridge.org" className="hover:text-fresh">Contact</a></li>
